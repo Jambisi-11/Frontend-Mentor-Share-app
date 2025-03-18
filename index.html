@@ -14,7 +14,7 @@
     />
 
     <title>Frontend Mentor | Article preview component</title>
-   
+
     <style>
       .attribution {
         font-size: 11px;
@@ -23,58 +23,35 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
-
-      .responsive-div {
-        display: flex;
-        width: full;
-        max-width: 768px;
-        border-radius: 1em;
-        background-color: white;
-        flex-direction: column;
-      }
-      @media (min-width: 768px) {
-        .responsive-div {
-          display: flex;
-          width: full;
-          max-width: 768px;
-          border-radius: 1em;
-          background-color: white;
-          flex-direction: row;
-        }
-      }
-    
     </style>
   </head>
-  <body>
-    <div
-      class="bg-[hsl(210,46%,95%)] h-[100vh] flex justify-center items-center md:flex md:flex-row"
-    >
+  <body class="bg-gray-200 min-h-screen flex justify-center items-center">
+    <div>
       <div
-        class="responsive-div flex w-[60%] max-w-3xl rounded-[1em] bg-white md:flex md:flex-row"
+        class="responsive-div grid h-[15em] w-[95%] md:max-w-2xl mx-auto rounded-[1em] bg-white md:grid md:grid-cols-[40%_60%]"
       >
         <!-- Image Section -->
-        <div class="flex justify-center items-center">
+        <div class="h-full">
           <img
             src="./images/drawers.jpg"
             alt=""
-            class="rounded-tl-[1em] rounded-bl-[1em] h-full"
+            class="rounded-tl-[1em] rounded-bl-[1em] h-[240px] object-cover"
           />
         </div>
 
         <!-- Content Section -->
-        <div class="flex flex-col justify-between p-8">
+        <div class="flex flex-col justify-between p-6">
           <div>
-            <h1 class="text-3xl font-bold pf mb-4">
+            <h1 class="text-[17px] font-bold mb-2">
               Shift the overall look and feel by adding these wonderful touches
               to furniture in your home.
             </h1>
-            <p class="mb-4 text-gray-600">
+            <p class="mb-4 text-[13px] text-gray-600">
               Ever been in a room and felt like something was missing? Perhaps
               it felt slightly bare and uninviting. I’ve got some simple tips to
               help you make any room feel complete.
             </p>
           </div>
-
           <!-- Profile Section -->
           <div class="flex justify-between items-center w-full">
             <div class="flex items-center gap-4">
@@ -94,106 +71,77 @@
               alt="Share Icon"
               class="cursor-pointer bg-gray-700 rounded-full w-10 h-10 p-2"
             />
-
-            <div
-              id="myModal"
-              class="fixed inset-0 ml-[48%] flex justify-end items-center hidden"
-            >
-              <!-- Speech Bubble Shape -->
-              <div
-                class="relative bg-gray-700 text-wite p-4 w-80 h-16 rounded-lg shadow-lg mt-8 mx-auto"
-              >
-                <ul class="flex items-center justify-center gap-6 mb-4 w-70">
-                  <li class="font-bold text-white">
-                    <a href="#">Share</a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img
-                        src="./images/icon-facebook.svg"
-                        alt="Facebook"
-                        class="w-6 h-6"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img
-                        src="./images/icon-twitter.svg"
-                        alt="Twitter"
-                        class="w-6 h-6"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="">
-                      <img
-                        class="bg-gray-700"
-                        src="./images/icon-pinterest.svg"
-                        alt="Pinterest"
-                        class="w-6 h-6"
-                      />
-                    </a>
-                  </li>
-                </ul>
-                <div class="flex justify-end gap-4">
-                  <button
-                    id="closeModalBtn"
-                    class="text-gray-700 transition-colors"
-                  >
-                    .
-                  </button>
-                </div>
-
-                <div
-                  class="absolute -bottom-6 left-[45%] w-0 h-0"
-                  style="
-                    border-left: 20px solid transparent;
-                    border-right: 20px solid transparent;
-                    border-top: 30px solid rgb(55, 65, 81);
-                  "
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="attribution">
-            Challenge by
-            <a
-              href="https://www.frontendmentor.io?ref=challenge"
-              target="_blank"
-              >Frontend Mentor</a
-            >. Coded by <a href="#">Ajide O. James</a>.
           </div>
         </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        id="myModal"
+        class="fixed inset-0 flex justify-center items-center hidden"
+      >
+        <div
+          class="relative bg-gray-700 text-white p-4 w-65 h-14 ml-[61.5%] mt-[-0.2px] rounded-lg mx-auto"
+        >
+          <ul class="flex items-center justify-center gap-6 mb-4 w-full">
+            <li class="font-bold text-white">
+              <a href="#">Share</a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="./images/icon-facebook.svg"
+                  alt="Facebook"
+                  class="w-6 h-6"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="./images/icon-twitter.svg"
+                  alt="Twitter"
+                  class="w-6 h-6"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="./images/icon-pinterest.svg"
+                  alt="Pinterest"
+                  class="w-6 h-6"
+                />
+              </a>
+            </li>
+          </ul>
+          <div
+            class="absolute -bottom-6 left-[45%] w-0 h-0"
+            style="
+              border-left: 20px solid transparent;
+              border-right: 20px solid transparent;
+              border-top: 30px solid rgb(55, 65, 81);
+            "
+          ></div>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Ajide O. James</a>.
       </div>
     </div>
 
     <script>
       const openModalBtn = document.getElementById("openModalBtn");
-      const closeModalBtn = document.getElementById("closeModalBtn");
       const modal = document.getElementById("myModal");
 
-      openModalBtn.onclick = () => {
+      openModalBtn.addEventListener("click", () => {
         modal.classList.remove("hidden");
-      };
+      });
 
-      // openModalBtn.addEventListener("click", () => {
-      //   modal.classList.remove("hidden");
-      // });
-
-      closeModalBtn.onclick = () => {
-        modal.classList.add("hidden");
-      };
-      // closeModalBtn.addEventListener("click", () => {
-      //   modal.classList.add("hidden");
-      // });
-
-      // showChallengeBtn.onclick = () => {
-      //   challengeBtn.classList.remove("hidden");
-      // };
-
-      // Close modal when clicking outside of it
       window.addEventListener("click", (event) => {
         if (event.target === modal) {
           modal.classList.add("hidden");
